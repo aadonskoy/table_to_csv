@@ -21,7 +21,7 @@ class Database
 
   def table_length
     check_table_name
-    @client.query("SELECT COUNT(*) as length FROM `#{@table}`").first['length']
+    @client.query("SELECT COUNT(*) as length FROM #{@table}").first['length']
   end
 
   def first
@@ -50,7 +50,7 @@ class Database
 
   def read_table
     @fields ||= '*'
-    query = "SELECT #{@fields} FROM `#{@table}` LIMIT #{@chunk_size} OFFSET #{@current_position}"
+    query = "SELECT #{@fields} FROM #{@table} LIMIT #{@chunk_size} OFFSET #{@current_position}"
     @current_position += @chunk_size
     @client.query(query)
   end
@@ -61,6 +61,6 @@ class Database
   end
 
   def escape(text)
-    @client.escape(text)
+    "`#{@client.escape(text)}`"
   end
 end

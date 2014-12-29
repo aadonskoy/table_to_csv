@@ -1,17 +1,20 @@
 mysql:
-  database: uwel_mebelok
-  username: root
-  host: localhost
+  database: ENV['db_name']
+  username: ENV['db_user']
+  password: ENV['db_password']
+  host: ENV['db_host']
 
 tables:
   review:
     author:
     email:
+
   customer:
     firstname:
     lastname:
     email:
     telephone:
+
   order:
     firstname:
     lastname:
