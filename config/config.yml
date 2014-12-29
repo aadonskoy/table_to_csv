@@ -1,0 +1,19 @@
+mysql:
+  database: uwel_mebelok
+  username: root
+  host: localhost
+
+tables:
+  review:
+    author:
+    email:
+  customer:
+    firstname:
+    lastname:
+    email:
+    telephone:
+  order:
+    firstname:
+    lastname:
+    email:
+    telephone:
