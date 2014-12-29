@@ -1,8 +1,8 @@
 mysql:
-  database: ENV['db_name']
-  username: ENV['db_user']
-  password: ENV['db_password']
-  host: ENV['db_host']
+  database: <%= ENV['db_name'] %>
+  username: <%= ENV['db_user'] %>
+  password: <%= ENV['db_password'] %>
+  host: <%= ENV['db_host'] %>
 
 tables:
   review:

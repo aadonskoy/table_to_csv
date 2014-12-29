@@ -5,7 +5,7 @@ class FileWrite
   end
 
   def write(data_array)
-    File.open(@filename, 'w') do |file|
+    File.open(@filename, 'a') do |file|
       data_array.each do |data|
         file.write(string_from_data(data))
       end

@@ -1,9 +1,10 @@
+require 'erb'
 require 'yaml'
 
 class Config
   def initialize
     file_path = [Dir.pwd, '/config/config.yml'].join
-    @data = YAML.load_file(file_path)
+    @data = YAML.load(ERB.new(File.read(file_path)).result)
   end
 
   def data
